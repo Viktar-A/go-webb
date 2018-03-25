@@ -6,6 +6,7 @@ import (
 	"image/jpeg"
 	"log"
 	"net/http"
+	"os"
 )
 
 type page struct {
@@ -35,11 +36,15 @@ func index(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	port := os.Getenv("PORT")
 
+	if port == "" {
+		log.Fatal("$PORT must be set")
+	}
 	http.HandleFunc("/", index)
 	http.Handle("/img/", http.StripPrefix("/img/", http.FileServer(http.Dir("./img/"))))
 	//log.Println("ListenAndServe....0.0.0.0:3000")
-	if err := http.ListenAndServe(":3000", nil); err != nil {
+	if err := http.ListenAndServe(":"+port, nil); err != nil {
 		log.Fatal("failed to start server", err)
 	}
 }

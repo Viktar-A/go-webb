@@ -7,11 +7,10 @@
         "start": "go run"
     },
     "keywords": [
-        
+        "getting-started",
+        "go",
+        "sample",
+        "example"
     ],
-    "author": {
-        
-    },
-    "license": "ISC"
-
+    "repository": "https://github.com/Viktar-A/go-examples.git"
 }
