@@ -1,0 +1,17 @@
+{
+    "name": "example",
+    "version": "1.0.0",
+    "description": "",
+    "main": "go-webb.go",
+    "scripts": {
+        "start": "go run"
+    },
+    "keywords": [
+        
+    ],
+    "author": {
+        
+    },
+    "license": "ISC"
+
+}
