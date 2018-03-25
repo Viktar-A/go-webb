@@ -39,7 +39,8 @@ func main() {
 	port := os.Getenv("PORT")
 
 	if port == "" {
-		log.Fatal("$PORT must be set")
+		port = "3000"
+		//log.Fatal("$PORT must be set")
 	}
 	http.HandleFunc("/", index)
 	http.Handle("/img/", http.StripPrefix("/img/", http.FileServer(http.Dir("./img/"))))
